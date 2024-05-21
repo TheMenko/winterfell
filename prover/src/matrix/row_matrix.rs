@@ -45,7 +45,7 @@ impl<E: FieldElement> RowMatrix<E> {
 
     /// Constructs a new [RowMatrix] from provided vec of elements that are assumed to be
     /// in row-major order.
-    pub fn new(data: Vec<E>, row_width: usize, elements_per_row: usize) -> Self {
+    pub fn new(data: Vec<E::BaseField>, row_width: usize, elements_per_row: usize) -> Self {
         RowMatrix {
             data,
             row_width,
