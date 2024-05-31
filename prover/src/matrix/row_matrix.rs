@@ -42,12 +42,13 @@ impl<E: FieldElement> RowMatrix<E> {
     // CONSTRUCTORS
     // --------------------------------------------------------------------------------------------
 
-    /// Returns a new [RowMatrix] with provided data, that is assumed to be a matrix in row-major order.
-    pub fn new(data: Vec<<E as FieldElement>::BaseField>, row_width: usize, elements_per_row: usize) -> Self {
+    /// Constructs a new [RowMatrix] from provided vec of elements that are assumed to be
+    /// in row-major order.
+    pub fn new(data: Vec<E::BaseField>, row_width: usize, elements_per_row: usize) -> Self {
         RowMatrix {
             data,
             row_width,
-            elements_per_row,
+            elements_per_row
         }
     }
 
