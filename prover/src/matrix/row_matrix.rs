@@ -43,6 +43,16 @@ impl<E: FieldElement> RowMatrix<E> {
     // CONSTRUCTORS
     // --------------------------------------------------------------------------------------------
 
+    /// Constructs a new [RowMatrix] from provided vec of elements that are assumed to be
+    /// in row-major order.
+    pub fn new(data: Vec<E::BaseField>, row_width: usize, elements_per_row: usize) -> Self {
+        RowMatrix {
+            data,
+            row_width,
+            elements_per_row
+        }
+    }
+
     /// Returns a new [RowMatrix] constructed by evaluating the provided polynomials over the
     /// domain defined by the specified blowup factor.
     ///
